@@ -18,7 +18,7 @@ function optionsUrl(url) {
     };
 }
 
-var server = new Hapi.Server("localhost", 3000);
+var server = new Hapi.Server("localhost", process.env.PORT || 5000);
 
 server.views({
     engines: {
