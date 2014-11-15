@@ -29,12 +29,16 @@ server.views({
 
 function repositoryHasGHPagesBranch(repo, callback) {
     "use strict";
-    Request.get(optionsUrl(repo.branches_url.replace(/{\/branch}$/, "")), function (error, response, body) {
-        var branches = JSON.parse(body);
-        callback(branches.filter(function (branch) {
-            return branch.name === "gh-pages";
-        }).length > 0);
-    });
+    if (repo.fork) {
+        callback(false);
+    } else {
+        Request.get(optionsUrl(repo.branches_url.replace(/{\/branch}$/, "")), function (error, response, body) {
+            var branches = JSON.parse(body);
+            callback(branches.filter(function (branch) {
+                return branch.name === "gh-pages";
+            }).length > 0);
+        });
+    }
 }
 
 var second = 1000;

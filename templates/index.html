@@ -4,11 +4,14 @@
         <title>{{{user}}}'s GitHub Pages Repositories</title>
     </head>
     <body>
-        {{#repos}}
-            <div>
-                <a href="{{html_url}}">{{{full_name}}}</a>
-                {{pagesResult.url}}
-            </div>
-        {{/repos}}
+        <table>
+            <tr><th>Repository</th><th>GitHub Pages</th></tr>
+            {{#repos}}
+                <tr>
+                    <td><a href="{{{html_url}}}">{{{full_name}}}</a></td>
+                    <td><a href="https://{{{owner.login}}}.github.io/{{{name}}}">Pages</a></td>
+                </tr>
+            {{/repos}}
+        </table>
     </body>
 </html>
