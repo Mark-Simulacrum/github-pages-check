@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{{user}}}'s GitHub Pages Repositories</title>
+    </head>
+    <body>
+        {{#repos}}
+            <div>
+                <a href="{{html_url}}">{{{full_name}}}</a>
+                {{pagesResult.url}}
+            </div>
+        {{/repos}}
+    </body>
+</html>
