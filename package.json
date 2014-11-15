@@ -14,7 +14,7 @@
         "url": "https://github.com/Mark-Simulacrum/github-pages-check"
     },
     "license": "MIT",
-    "devDependencies": {
+    "dependencies": {
         "async": "^0.9.0",
         "good": "^4.0.0",
         "good-console": "^2.0.1",
