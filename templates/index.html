@@ -6,7 +6,7 @@
             window.onload = function () {
                 document.getElementById("username-input").addEventListener("change", function (e) {
                     var a = document.createElement("a");
-                    a.href = window.location.host + "/?user=" + e.target.value;
+                    a.href = "http://" + window.location.host + "/?user=" + e.target.value;
                     document.querySelector("body").appendChild(a);
                     a.click();
                     a.parentElement.removeChild(a);
