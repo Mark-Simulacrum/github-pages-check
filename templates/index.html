@@ -2,10 +2,26 @@
 <html>
     <head>
         <title>{{{user}}}'s GitHub Pages Repositories</title>
+        <script>
+            window.onload = function () {
+                document.getElementById("username-input").addEventListener("change", function (e) {
+                    var a = document.createElement("a");
+                    a.href = window.location.host + "/?user=" + e.target.value;
+                    document.querySelector("body").appendChild(a);
+                    a.click();
+                    a.parentElement.removeChild(a);
+                    e.target.value = "";
+                });
+            };
+        </script>
     </head>
     <body>
         <p>
             You can provide a username in the URL, for example, <a href="https://github-gh-pages-list.herokuapp.com/?user=Mark-Simulacrum">https://github-gh-pages-list.herokuapp.com/?user=Mark-Simulacrum</a> would list the GitHub pages respositories for GitHub user Mark-Simulacrum.
+        </p>
+
+        <p>
+            Please input a GitHub username to see the user's GitHub pages repositories: <input id="username-input" type="text" />
         </p>
 
         <p>
